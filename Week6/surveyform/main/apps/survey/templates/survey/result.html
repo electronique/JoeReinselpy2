@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="formblock">
+        <div class="subblock"><h2>Submitted Information</h2></div>
+        <div class="subblock">Name:<h3>{{request.session.name}}</h3></div>
+        <div class="subblock">Location: <h3>{{request.session.location}}</h3>
+        </div>
+        <div class="subblock">Favorite Language:<h3>{{request.session.favlang}}</h3>
+        </div>
+        <div class="subblock">Other Comments:<h3>{{request.session.comments}}</h3>
+            <button><a href="../">Submit</a></button>
+        </div>
+           
+           
+    </div>
+    
+</body>
+</html>
