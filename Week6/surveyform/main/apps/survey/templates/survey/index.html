@@ -14,20 +14,20 @@
         <form action="result/" method="POST">
              {% csrf_token %}
                 <div class="formName">
-                    <label for="name" id="name">Name:</label>
-                    <input type="text"name="name">
+                   <p><label for="name" id="name">Name:</label>
+                    <input type="text"name="name"></p>
                 </div>
-                <div class="formLocation"> <label for="location">Dojo Location</label>
+               <p> <div class="formLocation"> <label for="location">Dojo Location</label>
                     <select class="pulldown"name="location" name="location">
-                            <option>Washigton D.C.</option>
+                            <option>Washington D.C.</option>
                             <option>Silcon Valley</option>
                             <option>Los Angeles</option>
                             <option>Dallas</option>
                             <option>Chicago</option>
                             <option>Tulsa</option>
                     </select>
-                </div>
-                <div class="formLang"> <label for="favlang">Favorite Language</label>
+                </div></p>
+               <p><div class="formLang"> <label for="favlang">Favorite Language</label>
                     <select name="favlang">
                             <option>Python</option>
                             <option>Java</option>
@@ -36,8 +36,8 @@
                             <option>HTML</option>
                             <option>CSS</option>
                     </select>
-                </div>
-                <div class="formComments"> <textarea name="comments"></textarea>
+                </div></p>
+                <div class="formComments"> <textarea rows="8" cols="40" name="comments"></textarea><br/>
                     <button>Submit</button>
                 </form>
                 </div>
