@@ -8,3 +8,22 @@
 .pulldown{
     display: inline-block;
 }
+#formstyling{
+    width:300px;
+    height:300px;
+    border:solid thin black;
+}
+
+.formName{
+    display: inline-block;
+}
+
+.formLocation{
+    display: inline-block;
+}
+.formLang{
+    display: inline-block;
+}
+.formComments{
+    display: inline-block;
+}
