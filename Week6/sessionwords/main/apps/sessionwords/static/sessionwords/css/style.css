@@ -1,0 +1,46 @@
+#container{
+    width:850px;
+    height:650px;
+    
+}
+#outputText{
+    margin-left: 40px;
+}
+
+.block{
+    display:inline-block;
+    width:400px;
+    height:600px;
+    border: solid thick;
+    border-color: white black white white;
+   
+    vertical-align: top;
+    
+
+}
+.block2{
+    border-color: white white white black;
+    
+}
+.blockcontents{
+    margin-left: 40px;
+}
+.separator{
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    height: 500px;
+}
+.separator:nth-child(2){
+    border-left: solid 2px black;
+    padding-left: 30px;
+}
+    .form-group{
+    margin: 10px;
+}
+.big{
+    font-size: 2em;
+}
+.word{
+    margin: 0;
+}

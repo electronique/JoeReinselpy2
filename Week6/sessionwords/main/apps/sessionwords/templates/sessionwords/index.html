@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sessionwords/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div class="block">
+            <div class="blockcontents">
+            <h1> Add a new word</h1>
+            <form action="process/" method="POST">
+                {% csrf_token %}
+            <input name="words" type="text"><br/>
+        <p><label for="newword">Choose Color</label></p>
+        <input type="radio" name="color" value="red">Red<br/>
+        <input type="radio" name="color" value="green">Green<br/>
+        <input type="radio" name="color" value="blue">Blue<br/>
+        <p><input type="checkbox" name="font" value="big">Show in BIG fonts!</p>
+        <p><input type="submit" name="submit" value="Add to Session">
+        </p>
+    </div></div>
+    </form>
+        <div class="block block2">
+            <form action="clearsession/" method="POST">
+                    {% csrf_token %}
+               <p><input type="submit" name=submit value="Clear Session"></p>
+            </form>
+            <div id="outputText">This is the text output
+            {% if request.session.words %}
+            {% for words in request.session.words %}
+            <p><{{words}}</p>
+            
+            {% endfor %}
+        {% endif %}
+        <P>{{temp_list}} </P>
+            </div>
+        </div>
+   
+    </div>
+    
+</body>
+</html>

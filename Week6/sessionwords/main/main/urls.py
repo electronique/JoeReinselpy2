@@ -18,16 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include('apps.first_app.urls')),
-    url(r'^create/$', include('apps.first_app.urls')),
-    url(r'^blogs/', include('apps.blogs.urls')),
-    url(r'^time_display/', include('apps.time_display.urls')),
-    url(r'^randomword/', include('apps.randomword.urls')),
-    url(r'^randomword/random', include('apps.randomword.urls')),
-    url(r'^surveys/', include('apps.surveys.urls')),
-    url(r'^surveys/login', include('apps.surveys.urls')),
-    url(r'^surveys/register', include('apps.surveys.urls')),
-    url(r'^users/', include('apps.users.urls'))
-    
-   
-]
+    url(r'^', include('apps.sessionwords.urls'))
+    ]
