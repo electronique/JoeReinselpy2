@@ -14,7 +14,7 @@
         <div class="block">
             <div class="blockcontents">
             <h1> Add a new word</h1>
-            <form action="process/" method="POST">
+            <form action="/process" method="POST">
                 {% csrf_token %}
             <input name="words" type="text"><br/>
         <p><label for="newword">Choose Color</label></p>
@@ -27,18 +27,18 @@
     </div></div>
     </form>
         <div class="block block2">
-            <form action="clearsession/" method="POST">
+            <form action="/clearsession" method="POST">
                     {% csrf_token %}
                <p><input type="submit" name=submit value="Clear Session"></p>
             </form>
             <div id="outputText">This is the text output
             {% if request.session.words %}
-            {% for words in request.session.words %}
-            <p><{{words}}</p>
+            {% for words in request.session.words %} #[{"word":hello", color:"red", "size":"big"},"goodbye","woohoo"]
+                if words.color == "red"
             
             {% endfor %}
         {% endif %}
-        <P>{{temp_list}} </P>
+        {{request.session.words}}
             </div>
         </div>
    
