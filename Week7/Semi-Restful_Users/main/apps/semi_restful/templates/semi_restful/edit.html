@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1>Edit Users</h1>
+    <table class="table table-striped">
+                <tr scope="row">
+                    <td>User ID: {{users.id}}</td>
+                    <td>User name:{{users.first_name}}{{users.last_name}}</td>
+                    <td></td>User email{{users.email}}</td>
+                </tr>
+    
+            <tbody>
+                <tr scope="row">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                </tr>
+            </tbody>
+    </table>
+    <form action="processedit/{{users.id}}" method="POST">
+        {% csrf_token %} 
+    First Name: <input type="text" name="first_name">
+    Last Name: <input type="text" name="last_name">
+    Email:  <input type="text" name="email">
+    <input type="submit">
+    </form>
+    
+
+    </body>
+</html>

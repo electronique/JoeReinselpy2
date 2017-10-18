@@ -12,6 +12,5 @@ class Dojos(models.Model):
 class Ninjas(models.Model):
       ninja_firstname = models.CharField(max_length=255)
       ninja_lastname = models.CharField(max_length=255)
-      dojo = models.ForeignKey(Dojos, related_name="ninjas")
-
+      dojo = models.ForeignKey(Dojos, related_name="dojoplace", null=True)
       
