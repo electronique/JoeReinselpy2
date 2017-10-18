@@ -16,6 +16,13 @@
    <p><input type="submit"></p>
    </form>
    <h1>Courses</h1>
+   {% if messages %}
+   <div class="messages">
+       {% for message in messages %}
+       <p>{{ message }}</p>
+       {% endfor %}
+   </div>
+   {% endif %}
    <table class="table table-striped">
         <thead>
             <tr scope="row">
