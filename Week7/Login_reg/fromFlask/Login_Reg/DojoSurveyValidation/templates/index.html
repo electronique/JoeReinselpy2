@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+<!-- linking a css style sheet -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<!-- linking a javascript file -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+    <title>Dojo Survey</title>
+</head>
+<body><div id="survey">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    <form action="/process" method="POST">
+    <label for="name" id="name">Name:</label>
+    <input type="text"name="name">
+       <div> <label for="location">Dojo Location</label>
+        <select name="location" name="location">
+          <option>Washigton D.C.</option>
+          <option>Silcon Valley</option>
+          <option>Los Angeles</option>
+          <option>Dallas</option>
+          <option>Chicago</option>
+          <option>Tulsa</option>
+        </select></div>
+        <label for="favlang">Favorite Language</label>
+        <select name="favlang">
+          <option>Python</option>
+          <option>Java</option>
+          <option>Angular</option>
+          <option>C#</option>
+          <option>HTML</option>
+          <option>CSS</option>
+        </select>
+       <div> <textarea name="comments"></textarea></div>
+        <button>Submit</button>
+        </form></div>
+</body>
+</html>

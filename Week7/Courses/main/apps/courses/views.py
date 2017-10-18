@@ -1,5 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 
+from django.contrib import messages
+
 from models import *
 # Create your views here.
 def index(request):
@@ -11,7 +13,15 @@ def index(request):
     return render(request, "courses/index.html",{"courses": course.objects.all()})
 
 def add(request):
-        course.objects.create(name=request.POST['name'],description=request.POST['description'])
+        errors = course.objects.basic_validator(request.POST)
+        if len(errors):
+            for tag, error in errors.iteritems():
+                messages.error(request, error, extra_tags=tag)
+            print 'need more information'
+            
+            return redirect('/courses')
+        else:
+            course.objects.create(name=request.POST['name'],description=request.POST['description'])
         
         return redirect('/courses')
 def remove(request,id):
